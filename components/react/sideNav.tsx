@@ -220,6 +220,7 @@ export default function SideNav({ isDrawerVisible, setDrawerVisible }: SideNavPr
           </div>
         </div>
 
+
         <div className="flex items-center justify-between mb-2">
           {/* Theme toggle */}
           <div className="relative w-full h-[3.6rem] bg-[#0000000A] dark:bg-[#FFFFFF0F] rounded-xl">
@@ -231,12 +232,18 @@ export default function SideNav({ isDrawerVisible, setDrawerVisible }: SideNavPr
                 checked={theme === 'dark'}
                 onChange={() => toggleTheme()}
               />
-              <div className="flex items-center justify-center w-1/2 h-full z-10">
+              <div
+                className="flex flex-col items-center justify-center w-1/2 h-full z-10 tooltip tooltip-primary tooltip-top hover:after:delay-1000 hover:before:delay-1000"
+                data-tip="Light Mode"
+              >
                 <LightIcon
                   className={`w-8 h-8 ${theme === 'light' ? 'text-white' : 'text-gray-500'} transition-colors duration-300`}
                 />
               </div>
-              <div className="flex items-center justify-center w-1/2 h-full z-10">
+              <div
+                className="flex flex-col items-center justify-center w-1/2 h-full z-10 tooltip tooltip-primary tooltip-top hover:after:delay-1000 hover:before:delay-1000"
+                data-tip="Dark Mode"
+              >
                 <DarkIcon
                   className={`w-8 h-8 ${theme === 'dark' ? 'text-white' : 'text-gray-500'} transition-colors duration-300`}
                 />
@@ -249,6 +256,7 @@ export default function SideNav({ isDrawerVisible, setDrawerVisible }: SideNavPr
             </label>
           </div>
         </div>
+
 
         <ul className="pt-5 pb-4">
           <div className="mx-auto w-full justify-center items-center h-full">
